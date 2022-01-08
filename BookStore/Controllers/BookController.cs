@@ -1,4 +1,5 @@
 ﻿using BookStore.BookOperations.CreateBook;
+using BookStore.BookOperations.DeleteBook;
 using BookStore.BookOperations.GetBooks;
 using BookStore.BookOperations.UpdateBook;
 using BookStore.DBOperations;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using static BookStore.BookOperations.CreateBook.CreateBookCommand;
+using static BookStore.BookOperations.GetBooks.GetBookByIdQuery;
 using static BookStore.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace BookStore.Controllers
@@ -62,8 +64,19 @@ namespace BookStore.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            GetBookByIdQuery query = new GetBookByIdQuery(_context);
-            var result = query.Handle(id);
+
+            BooksViewModel result;
+            try
+            {
+                GetBookByIdQuery query = new GetBookByIdQuery(_context);
+                query.BookId = id;
+                result = query.Handle();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
             return Ok(result);
         }
 
@@ -73,9 +86,10 @@ namespace BookStore.Controllers
         [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            CreateBookCommand command = new CreateBookCommand(_context);
+            
             try
             {
+                CreateBookCommand command = new CreateBookCommand(_context);
                 command.Model = newBook;
                 command.Handle();
             }
@@ -91,9 +105,10 @@ namespace BookStore.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
-            UpdateBookCommand command = new UpdateBookCommand(_context);
+            
             try
             {
+                UpdateBookCommand command = new UpdateBookCommand(_context);
                 command.Model = updatedBook;
                 command.Handle(id, updatedBook);
             }
@@ -109,13 +124,17 @@ namespace BookStore.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Id == id);
-            if (book is null)
-                return BadRequest();
+            
+            try
+            {
+                DeleteBookCommand command = new DeleteBookCommand(_context);
+                command.Handle(id);
+            }
+            catch (Exception ex)
+            {
 
-
-            _context.Books.Remove(book);
-            _context.SaveChanges();
+                return BadRequest(ex.Message);
+            }
             return Ok();
         }
 

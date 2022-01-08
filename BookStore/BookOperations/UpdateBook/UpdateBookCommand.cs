@@ -28,7 +28,7 @@ namespace BookStore.BookOperations.UpdateBook
             book.PublishDate = updateBookModel.PublishDate != default ? updateBookModel.PublishDate : updateBookModel.PublishDate;
 
             _dbContext.SaveChanges();
-        }
+        } 
 
         public class UpdateBookModel
         {

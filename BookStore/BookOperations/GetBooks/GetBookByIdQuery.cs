@@ -10,23 +10,22 @@ namespace BookStore.BookOperations.GetBooks
     public class GetBookByIdQuery
     {
         private readonly BookStoreDbContext _dbContext;
-
+        public int BookId { get; set; }
         public GetBookByIdQuery(BookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public List<BooksViewModel> Handle(int id)
+        public BooksViewModel Handle()
         {
-            var book = _dbContext.Books.Where(book => book.Id == id).SingleOrDefault();
-            List<BooksViewModel> booksView = new List<BooksViewModel>();
-            booksView.Add(new BooksViewModel()
-            {
-                  Title = book.Title,
-                  PageCount = book.PageCount,
-                  PublishDate = book.PublishDate.ToString("dd/MM/yyyy"),
-                  Genre = ((GenreEnum)book.GenreId).ToString()
-             });
+            var book = _dbContext.Books.Where(book => book.Id == BookId).SingleOrDefault();
+            if (book is null)
+                throw new InvalidOperationException("Kitap Bulunamadı!");
+            BooksViewModel booksView = new BooksViewModel();
+            booksView.Title = book.Title;
+            booksView.PageCount = book.PageCount;
+            booksView.PublishDate = book.PublishDate.Date.ToString("dd/MM/yyyy");
+            booksView.GenreId = book.GenreId;
             return booksView;
             
         }
@@ -35,7 +34,7 @@ namespace BookStore.BookOperations.GetBooks
             public string Title { get; set; }
             public int PageCount { get; set; }
             public string PublishDate { get; set; }
-            public string Genre { get; set; }
+            public int GenreId { get; set; }
         }
     }
 }
