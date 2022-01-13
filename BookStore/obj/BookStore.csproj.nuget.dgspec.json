@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\source\\repos\\BookStore\\BookStore.csproj": {}
+    "C:\\Users\\Acer\\source\\repos\\PatikaNetCore\\BookStore\\BookStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\source\\repos\\BookStore\\BookStore.csproj": {
+    "C:\\Users\\Acer\\source\\repos\\PatikaNetCore\\BookStore\\BookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\source\\repos\\BookStore\\BookStore.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\source\\repos\\PatikaNetCore\\BookStore\\BookStore.csproj",
         "projectName": "BookStore",
-        "projectPath": "C:\\Users\\Acer\\source\\repos\\BookStore\\BookStore.csproj",
+        "projectPath": "C:\\Users\\Acer\\source\\repos\\PatikaNetCore\\BookStore\\BookStore.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\source\\repos\\BookStore\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\source\\repos\\PatikaNetCore\\BookStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.13, )"

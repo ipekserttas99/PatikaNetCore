@@ -9,6 +9,7 @@ namespace BookStore.BookOperations.DeleteBook
     public class DeleteBookCommand
     {
         private readonly BookStoreDbContext _dbContext;
+        public int BookId {get;set;}
 
         public DeleteBookCommand(BookStoreDbContext dbContext)
         {
@@ -17,7 +18,7 @@ namespace BookStore.BookOperations.DeleteBook
 
         public void Handle(int id)
         {
-            var book = _dbContext.Books.SingleOrDefault(x => x.Id == id);
+            var book = _dbContext.Books.SingleOrDefault(x => x.Id == BookId);
             if (book is null)
                 throw new InvalidOperationException("Silinecek kitap bulunamadı!");
 

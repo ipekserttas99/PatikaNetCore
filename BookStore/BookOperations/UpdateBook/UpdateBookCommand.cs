@@ -1,4 +1,5 @@
-﻿using BookStore.DBOperations;
+﻿using AutoMapper;
+using BookStore.DBOperations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,21 @@ namespace BookStore.BookOperations.UpdateBook
     {
         public UpdateBookModel Model { get; set; }
         private readonly BookStoreDbContext _dbContext;
-
-        public UpdateBookCommand(BookStoreDbContext dbContext)
+        private readonly IMapper _mapper;
+        public int BookId { get; set; }
+        public UpdateBookCommand(BookStoreDbContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
-        public void Handle(int id, UpdateBookModel updateBookModel)
+        public void Handle(UpdateBookModel updateBookModel)
         {
-            var book = _dbContext.Books.SingleOrDefault(x => x.Id == id);
+            var book = _dbContext.Books.Where(book => book.Id == BookId).SingleOrDefault();
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı");
 
-            book.GenreId = updateBookModel.GenreId != default /*yani verisi doldurulmuşsa*/ ? updateBookModel.GenreId : /*eğer doldurulmamışsa kendisinin(önceki veriyi) koy*/ book.GenreId;
-            book.PageCount = updateBookModel.PageCount != default ? updateBookModel.PageCount : book.PageCount;
-            book.Title = updateBookModel.Title != default ? updateBookModel.Title : book.Title;
-            book.PublishDate = updateBookModel.PublishDate != default ? updateBookModel.PublishDate : updateBookModel.PublishDate;
-
+            _mapper.Map(updateBookModel, book);
             _dbContext.SaveChanges();
         } 
 
