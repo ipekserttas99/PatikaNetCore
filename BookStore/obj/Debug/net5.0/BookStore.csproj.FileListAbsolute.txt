@@ -56,7 +56,6 @@ C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Swashbuckle.
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.csproj.AssemblyReference.cache
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.AssemblyInfoInputs.cache
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.AssemblyInfo.cs
@@ -73,3 +72,5 @@ C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\ref\BookStor
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.pdb
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.genruntimeconfig.cache
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.csproj.AssemblyReference.cache
