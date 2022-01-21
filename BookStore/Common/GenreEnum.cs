@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BookStore.Common
+﻿namespace BookStore.Common
 {
     public enum GenreEnum
     {
-        PersonalGrowth =1,
+        PersonalGrowth = 1,
         ScienceFiction,
         Noval
     }

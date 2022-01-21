@@ -1,17 +1,15 @@
 ﻿using BookStore.DBOperations;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.Application.GenreOperations.Commands.DeleteGenre
 {
     public class DeleteGenreCommand
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         public int GenreId { get; set; }
 
-        public DeleteGenreCommand(BookStoreDbContext dbContext)
+        public DeleteGenreCommand(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }

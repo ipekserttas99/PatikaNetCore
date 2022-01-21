@@ -6,12 +6,8 @@ using BookStore.BookOperations.UpdateBook;
 using BookStore.DBOperations;
 using BookStore.Entities;
 using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
 using static BookStore.BookOperations.CreateBook.CreateBookCommand;
-using static BookStore.BookOperations.GetBooks.GetBookByIdQuery;
 using static BookStore.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace BookStore.Controllers
@@ -20,9 +16,9 @@ namespace BookStore.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public BookController(BookStoreDbContext context, IMapper mapper)
+        public BookController(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -46,38 +42,38 @@ namespace BookStore.Controllers
             GetBookByIdQueryValidator validator = new GetBookByIdQueryValidator();
             validator.ValidateAndThrow(query);
             result = query.Handle();
-            
+
             return Ok(result);
         }
 
-        
+
 
         //POST
         [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            CreateBookCommand command = new CreateBookCommand(_context,_mapper);
+            CreateBookCommand command = new CreateBookCommand(_context, _mapper);
             command.Model = newBook;
             CreateBookCommandValidator validator = new CreateBookCommandValidator();
             validator.ValidateAndThrow(command);
             command.Handle();
 
             return Ok();
-            
+
         }
 
         //PUT
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
-            UpdateBookCommand command = new UpdateBookCommand(_context,_mapper);
+            UpdateBookCommand command = new UpdateBookCommand(_context, _mapper);
             command.BookId = id;
             command.Model = updatedBook;
             UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
             validator.ValidateAndThrow(command);
-                
+
             command.Handle(updatedBook);
-           
+
             return Ok(updatedBook);
         }
 
@@ -90,7 +86,7 @@ namespace BookStore.Controllers
             DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
             validator.ValidateAndThrow(command);
             command.Handle(id);
-            
+
             return Ok();
         }
 

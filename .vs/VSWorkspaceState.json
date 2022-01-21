@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BookStore\\bin\\Debug"
+    "\\BookStore",
+    "\\BookStore\\Application",
+    "\\BookStore\\Application\\AuthorOperations",
+    "\\BookStore\\Application\\AuthorOperations\\Commands",
+    "\\BookStore\\Application\\AuthorOperations\\Commands\\DeleteAuthor",
+    "\\BookStore\\DBOperations"
   ],
+  "SelectedNode": "\\BookStore\\Application\\AuthorOperations\\Commands\\DeleteAuthor\\DeleteAuthorCommand.cs",
   "PreviewInSolutionExplorer": false
 }

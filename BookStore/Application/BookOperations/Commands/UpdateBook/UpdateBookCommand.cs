@@ -1,19 +1,17 @@
 ﻿using AutoMapper;
 using BookStore.DBOperations;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.BookOperations.UpdateBook
 {
     public class UpdateBookCommand
     {
         public UpdateBookModel Model { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public int BookId { get; set; }
-        public UpdateBookCommand(BookStoreDbContext dbContext,IMapper mapper)
+        public UpdateBookCommand(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
@@ -27,7 +25,7 @@ namespace BookStore.BookOperations.UpdateBook
 
             _mapper.Map(updateBookModel, book);
             _dbContext.SaveChanges();
-        } 
+        }
 
         public class UpdateBookModel
         {

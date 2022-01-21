@@ -2,9 +2,7 @@
 using BookStore.DBOperations;
 using BookStore.Entities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.BookOperations.CreateBook
 {
@@ -12,9 +10,9 @@ namespace BookStore.BookOperations.CreateBook
     {
         public CreateBookModel Model { get; set; }
 
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
-        public CreateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
+        public CreateBookCommand(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
@@ -28,11 +26,11 @@ namespace BookStore.BookOperations.CreateBook
                 throw new InvalidOperationException("Kitap zaten mevcut");
             }
             book = _mapper.Map<Book>(Model);
-            
+
 
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
-            
+
         }
 
         public class CreateBookModel

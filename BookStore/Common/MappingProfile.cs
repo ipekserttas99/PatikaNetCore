@@ -1,9 +1,5 @@
 ﻿using AutoMapper;
 using BookStore.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using static BookStore.Application.AuthorOperations.Commands.CreateAuthor.CreateAuthorCommand;
 using static BookStore.Application.AuthorOperations.Commands.UpdateAuthor.UpdateAuthorCommand;
 using static BookStore.Application.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
@@ -39,6 +35,6 @@ namespace BookStore.Common
             CreateMap<Author, UpdateAuthorModel>();
             CreateMap<UpdateAuthorModel, Author>();
         }
-        
+
     }
 }

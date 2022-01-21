@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -42,8 +40,8 @@ namespace BookStore.Middlewares
                 watch.Stop();
                 await HandleException(context, ex, watch);
             }
-            
-            
+
+
         }
 
         private Task HandleException(HttpContext context, Exception ex, Stopwatch watch)

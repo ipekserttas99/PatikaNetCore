@@ -43,6 +43,7 @@ C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\ref\BookStor
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\BookStore.pdb
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\FluentValidation.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
@@ -51,6 +52,7 @@ C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Microsoft.Ex
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -71,6 +73,4 @@ C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.dl
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\ref\BookStore.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.pdb
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.genruntimeconfig.cache
-C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\FluentValidation.dll
-C:\Users\Acer\source\repos\PatikaNetCore\BookStore\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Acer\source\repos\PatikaNetCore\BookStore\obj\Debug\net5.0\BookStore.csproj.AssemblyReference.cache

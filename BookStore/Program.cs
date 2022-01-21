@@ -1,13 +1,7 @@
 using BookStore.DBOperations;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore
 {
@@ -22,7 +16,7 @@ namespace BookStore
                 var services = scope.ServiceProvider;
                 DataGenerator.Initialize(services);
             }
-                
+
             host.Run();
         }
 

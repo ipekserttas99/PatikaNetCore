@@ -2,18 +2,16 @@
 using BookStore.DBOperations;
 using BookStore.Entities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.Application.GenreOperations.Commands.CreateGenre
 {
     public class CreateGenreCommand
     {
         public CreateGenreModel Model { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public CreateGenreCommand(BookStoreDbContext context, IMapper mapper)
+        public CreateGenreCommand(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -30,7 +28,7 @@ namespace BookStore.Application.GenreOperations.Commands.CreateGenre
             _context.Genres.Add(genre);
             _context.SaveChanges();
         }
-       
+
 
         public class CreateGenreModel
         {

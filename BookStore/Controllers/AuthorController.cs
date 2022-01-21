@@ -5,14 +5,8 @@ using BookStore.Application.AuthorOperations.Commands.UpdateAuthor;
 using BookStore.Application.AuthorOperations.Queries.GetAuthorDetail;
 using BookStore.Application.AuthorOperations.Queries.GetAuthors;
 using BookStore.DBOperations;
-using BookStore.Entities;
 using FluentValidation;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using static BookStore.Application.AuthorOperations.Commands.CreateAuthor.CreateAuthorCommand;
 using static BookStore.Application.AuthorOperations.Commands.UpdateAuthor.UpdateAuthorCommand;
 
@@ -22,10 +16,10 @@ namespace BookStore.Controllers
     [ApiController]
     public class AuthorController : ControllerBase
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public AuthorController(BookStoreDbContext dbContext, IMapper mapper)
+        public AuthorController(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

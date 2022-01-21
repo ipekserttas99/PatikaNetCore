@@ -2,9 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.DBOperations
 {
@@ -12,7 +10,7 @@ namespace BookStore.DBOperations
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using( var context = new BookStoreDbContext(serviceProvider.GetRequiredService<DbContextOptions<BookStoreDbContext>>()))
+            using (var context = new BookStoreDbContext(serviceProvider.GetRequiredService<DbContextOptions<BookStoreDbContext>>()))
             {
                 if (context.Books.Any())
                 {
@@ -36,31 +34,31 @@ namespace BookStore.DBOperations
                 context.Authors.AddRange(
                     new Author
                     {
-                        Name= "William",
-                        Surname= "Shakespeare",
-                        BookId=1,
-                        DateOfBirth="01/04/1564"
+                        Name = "William",
+                        Surname = "Shakespeare",
+                        BookId = 1,
+                        DateOfBirth = new DateTime(1564, 04, 01)
                     },
                     new Author
                     {
                         Name = "George",
                         Surname = "Orwell",
                         BookId = 2,
-                        DateOfBirth = "25/06/1903"
+                        DateOfBirth = new DateTime(1903, 06, 25)
                     },
                     new Author
                     {
                         Name = "J.K.",
                         Surname = "Rowling",
                         BookId = 3,
-                        DateOfBirth = "31/07/1965"
+                        DateOfBirth = new DateTime(1965, 07, 12)
                     },
                     new Author
                     {
                         Name = "Wilbur",
                         Surname = "Smith",
                         BookId = 4,
-                        DateOfBirth = "09/01/1933"
+                        DateOfBirth = new DateTime(1933, 01, 09)
                     }
                  );
 
@@ -70,8 +68,8 @@ namespace BookStore.DBOperations
                         Title = "Lean Startup",
                         GenreId = 1,
                         PageCount = 200,
-                        AuthorId=1,
-                        IsActive =false,
+                        AuthorId = 1,
+                        IsActive = false,
                         PublishDate = new DateTime(2001, 06, 12)
                     },
                     new Book

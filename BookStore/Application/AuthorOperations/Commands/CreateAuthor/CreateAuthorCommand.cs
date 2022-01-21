@@ -2,18 +2,16 @@
 using BookStore.DBOperations;
 using BookStore.Entities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.Application.AuthorOperations.Commands.CreateAuthor
 {
     public class CreateAuthorCommand
     {
         public CreateAuthorModel Model { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public CreateAuthorCommand(BookStoreDbContext context, IMapper mapper)
+        public CreateAuthorCommand(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -36,7 +34,7 @@ namespace BookStore.Application.AuthorOperations.Commands.CreateAuthor
         {
             public string Name { get; set; }
             public string Surname { get; set; }
-            public string DateOfBirth { get; set; }
+            public DateTime DateOfBirth { get; set; }
             public int BookId { get; set; }
         }
     }

@@ -1,19 +1,17 @@
 ﻿using AutoMapper;
 using BookStore.DBOperations;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.Application.AuthorOperations.Commands.UpdateAuthor
 {
     public class UpdateAuthorCommand
     {
         public UpdateAuthorModel Model { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public int AuthorId { get; set; }
-        public UpdateAuthorCommand(BookStoreDbContext dbContext, IMapper mapper)
+        public UpdateAuthorCommand(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
@@ -35,7 +33,7 @@ namespace BookStore.Application.AuthorOperations.Commands.UpdateAuthor
         {
             public string Name { get; set; }
             public string Surname { get; set; }
-            public string DateOfBirth { get; set; }
+            public DateTime DateOfBirth { get; set; }
             public int BookId { get; set; }
             public bool IsActive { get; set; } = true;
         }
